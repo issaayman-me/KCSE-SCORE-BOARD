@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Scoreboard | Kenyan Certificate of Secondary Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <div class="logo-placeholder">
+                    <img src="assets/logo.png" alt="KCSE Logo" class="preloader-logo">
+                </div>
+            </div>
+            <div class="loader-text">
+                <h3>KCSE Scoreboard</h3>
+                <p>Loading grading system...</p>
+            </div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="mainContainer">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="KCSE Logo" id="logoImage">
+                    <div class="logo-text">
+                        <h1>KCSE Scoreboard</h1>
+                        <p>Kenyan Certificate of Secondary Education</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-info">
+                <p><i class="fas fa-graduation-cap"></i> Official Grading System</p>
+                <p><i class="fas fa-calendar-alt"></i> <span id="currentDate">Loading...</span></p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section" id="inputSection">
+                <div class="section-header">
+                    <h2><i class="fas fa-user-graduate"></i> Student Information</h2>
+                    <p>Enter student details and select subjects with marks</p>
+                </div>
+                
+                <!-- Student Details Form -->
+                <div class="form-container">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studentName"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" id="studentName" placeholder="Enter student's full name" class="form-control">
+                            <div class="error-message" id="nameError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="indexNumber"><i class="fas fa-id-card"></i> Index Number</label>
+                            <input type="number" id="indexNumber" placeholder="e.g., 1234567890" class="form-control">
+                            <div class="error-message" id="indexError"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Subject Count Selection -->
+                    <div class="form-group">
+                        <label for="subjectCount"><i class="fas fa-book-open"></i> Number of Subjects (7-9)</label>
+                        <select id="subjectCount" class="form-control">
+                            <option value="">Select number of subjects</option>
+                            <option value="7">7 Subjects</option>
+                            <option value="8">8 Subjects</option>
+                            <option value="9">9 Subjects</option>
+                        </select>
+                        <div class="error-message" id="countError"></div>
+                    </div>
+                    
+                    <!-- Subject Selection Area -->
+                    <div id="subjectContainer" class="subject-container">
+                        <div class="info-box">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Select the number of subjects above to display subject selection fields. <strong>Mandatory subjects:</strong> English, Kiswahili, and Mathematics.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="button-group">
+                        <button id="calculateBtn" class="btn btn-primary">
+                            <i class="fas fa-calculator"></i> Calculate Results
+                        </button>
+                        <button id="resetBtn" class="btn btn-secondary">
+                            <i class="fas fa-redo"></i> Reset Form
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-line"></i> KCSE Scoreboard</h2>
+                    <p>Results</p>
+                </div>
+                
+                <div class="results-container" id="resultsContainer">
+                    <!-- Results will be dynamically generated here -->
+                    <div class="placeholder-results">
+                        <div class="placeholder-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Results will appear here</h3>
+                        <p>Enter student information and subject marks, then click "Calculate Results"</p>
+                    </div>
+                </div>
+                
+                <!-- Print Button -->
+                <div class="print-container" id="printContainer">
+                    <button id="printBtn" class="btn btn-print">
+                        <i class="fas fa-print"></i> Print Scoreboard
+                    </button>
+                    <div class="print-note">
+                        <i class="fas fa-lightbulb"></i> For best printing results, use "Save as PDF" in the print dialog
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-placeholder-small"></div>
+                    <div>
+                        <h3>KCSE Scoreboard</h3>
+                        <p>An educational tool for KCSE grading simulation</p>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <p><i class="fas fa-code"></i> Built with HTML, CSS & JavaScript</p>
+                    <p><i class="fas fa-graduation-cap"></i> For educational purposes only</p>
+                    <p><i class="fas fa-exclamation-triangle"></i> Follows official KCSE grading scales</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2025</span> KCSE Scoreboard | Designed for Learning</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
