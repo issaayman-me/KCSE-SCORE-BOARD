@@ -19,7 +19,7 @@ KCSE SCORE BOARD/
 ├── script.js # JavaScript with all application logic
 ├── README.md # This documentation file
 └── assets/
-└── logo.png # Application logo (used as favicon and watermark)
+   └── logo.png # Application logo (used as favicon and watermark)
 
 ## How to Use
 
